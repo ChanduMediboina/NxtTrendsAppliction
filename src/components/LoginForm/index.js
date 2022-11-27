@@ -10,6 +10,7 @@ class LoginForm extends Component {
     password: '',
     showSubmitError: false,
     errorMsg: '',
+    togglePassword: false,
   }
 
   onChangeUsername = event => {
@@ -59,7 +60,7 @@ class LoginForm extends Component {
   }
 
   renderPasswordField = () => {
-    const {password} = this.state
+    const {password, togglePassword} = this.state
 
     return (
       <>
@@ -67,7 +68,7 @@ class LoginForm extends Component {
           PASSWORD
         </label>
         <input
-          type="password"
+          type={togglePassword ? 'text' : 'password'}
           id="password"
           className="password-input-field"
           value={password}
@@ -98,6 +99,10 @@ class LoginForm extends Component {
     )
   }
 
+  ontoggleShowPassword = () => {
+    this.setState(prevState => ({togglePassword: !prevState.togglePassword}))
+  }
+
   render() {
     const {showSubmitError, errorMsg} = this.state
     const jwtToken = Cookies.get('jwt_token')
@@ -126,6 +131,17 @@ class LoginForm extends Component {
           />
           <div className="input-container">{this.renderUsernameField()}</div>
           <div className="input-container">{this.renderPasswordField()}</div>
+          <div className="show-password-container">
+            <input
+              onChange={this.ontoggleShowPassword}
+              className="password-input"
+              type="checkbox"
+              id="checkbox"
+            />
+            <label htmlFor="checkbox" className="password-label">
+              Show Password
+            </label>
+          </div>
           <button type="submit" className="login-button">
             Login
           </button>
