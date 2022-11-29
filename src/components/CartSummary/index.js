@@ -1,4 +1,6 @@
 // Write your code here
+import {Link} from 'react-router-dom'
+
 import CartContext from '../../context/CartContext'
 
 import './index.css'
@@ -13,9 +15,11 @@ const CartSummary = () => (
             Order Total: RS {totalCartPrice}/-
           </h1>
           <p className="total-item-summary">{cartList.length} Items in cart</p>
-          <button type="button" className="checkOut-btn">
-            Checkout
-          </button>
+          <Link to="/delivery-address">
+            <button type="button" className="checkOut-btn">
+              Checkout
+            </button>
+          </Link>
         </div>
       )
     }}

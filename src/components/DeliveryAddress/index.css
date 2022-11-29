@@ -1,0 +1,76 @@
+.delivery-container {
+  background-color: aliceblue;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  min-height: 100vh;
+}
+.delivery-heading {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  font-weight: 600;
+  color: rgb(5, 63, 27);
+}
+.delivery-form-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
+.name {
+  margin: 8px;
+  width: 300px;
+  border: 1px solid #000;
+}
+
+.delivery-address {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.delivery-input {
+  width: 30px;
+  margin-top: 10px;
+  margin-left: 20px;
+}
+.address-type-label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+.btn-container {
+  display: flex;
+  align-items: center;
+}
+.delivery-btn {
+  border: none;
+  background-color: #003bfd;
+  color: #fff;
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 15px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.delivery-btn:hover {
+  background-color: transparent;
+  border: 1.5px solid rgb(30, 253, 0);
+  color: rgb(30, 253, 0);
+}
+.delivery-cancel-btn {
+  border: 1.5px solid rgb(253, 0, 0);
+  background-color: transparent;
+  color: rgb(253, 0, 0);
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 15px;
+  margin-left: 20px;
+  cursor: pointer;
+}
+.delivery-cancel-btn:hover {
+  background-color: rgb(253, 0, 0);
+  color: #fff;
+}

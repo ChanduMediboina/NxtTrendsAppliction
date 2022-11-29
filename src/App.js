@@ -10,6 +10,9 @@ import NotFound from './components/NotFound'
 import ProtectedRoute from './components/ProtectedRoute'
 import CartContext from './context/CartContext'
 import SignInForm from './components/SignInForm'
+import DeliveryPage from './components/DeliveryAddress'
+import PaymentGateWay from './components/PaymentGateWay'
+import SuccessfulOrder from './components/SuccessfulOrder'
 
 import './App.css'
 
@@ -121,6 +124,21 @@ class App extends Component {
             component={ProductItemDetails}
           />
           <ProtectedRoute exact path="/cart" component={Cart} />
+          <ProtectedRoute
+            exact
+            path="/delivery-address"
+            component={DeliveryPage}
+          />
+          <ProtectedRoute
+            exact
+            path="/payment-gateway"
+            component={PaymentGateWay}
+          />
+          <ProtectedRoute
+            exact
+            path="/order-success"
+            component={SuccessfulOrder}
+          />
           <Route path="/sign-in" component={SignInForm} />
           <Route path="/not-found" component={NotFound} />
           <Redirect to="not-found" />
