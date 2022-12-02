@@ -60,10 +60,13 @@
   line-height: 1.2;
   text-align: center;
 }
+.home-heading::first-line {
+  color: #09d27e;
+}
 
 @media screen and (min-width: 768px) {
   .home-heading {
-    font-size: 46px;
+    font-size: 32px;
     text-align: left;
   }
 }

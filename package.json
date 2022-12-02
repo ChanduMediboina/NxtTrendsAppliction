@@ -19,7 +19,8 @@
     "react-icons": "4.2.0",
     "react-loader-spinner": "4.0.0",
     "react-router-dom": "5.2.0",
-    "styled-components": "5.3.6"
+    "styled-components": "5.3.6",
+    "typewriter-effect": "2.19.0"
   },
   "devDependencies": {
     "eslint-config-airbnb": "18.2.1",

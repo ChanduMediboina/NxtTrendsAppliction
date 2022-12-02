@@ -47,7 +47,6 @@ class App extends Component {
         this.updateTotalCartBill,
       )
     }
-    console.log(findCart)
   }
 
   removeCartItem = id => {
@@ -65,7 +64,7 @@ class App extends Component {
 
   incrementCartItemQuantity = id => {
     const {cartList} = this.state
-    console.log(id)
+
     const increaseQuantity = cartList.map(each => {
       if (each.id === id) {
         return {...each, quantity: each.quantity + 1}
@@ -87,7 +86,7 @@ class App extends Component {
 
   decrementCartItemQuantity = id => {
     const {cartList} = this.state
-    console.log(id)
+
     const decreaseQuantity = cartList.map(each => {
       if (each.quantity > 1) {
         if (each.id === id) {

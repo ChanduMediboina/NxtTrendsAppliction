@@ -12,6 +12,7 @@ dependencies:
   react-loader-spinner: 4.0.0_react-dom@17.0.1+react@17.0.1
   react-router-dom: 5.2.0_react@17.0.1
   styled-components: 5.3.6_react-dom@17.0.1+react@17.0.1
+  typewriter-effect: 2.19.0_react-dom@17.0.1+react@17.0.1
 devDependencies:
   eslint-config-airbnb: 18.2.1
   eslint-config-prettier: 8.1.0
@@ -10546,7 +10547,6 @@ packages:
     resolution:
       integrity: sha512-iuh7L6jA7JEGu2WxDwtQP1ddOpaJNC4KlDEFfdQajSGgGPNi4OyDc2R7QnbY2bR9QjBVGwgvTdNJZoE7RaxUMA==
   /performance-now/2.1.0:
-    dev: true
     resolution:
       integrity: sha512-7EAHlyLHI56VEIdK57uwHdHKIaAGbnXPiw0yWbarQZOKaKpvUIgW0jWRVLiatnM+XXlSwsanIBH/hzGMJulMow==
   /picocolors/0.2.1:
@@ -11616,7 +11616,6 @@ packages:
   /raf/3.4.1:
     dependencies:
       performance-now: 2.1.0
-    dev: true
     resolution:
       integrity: sha512-Sq4CW4QhwOHE8ucn6J34MqtZCeWFP2aQSmrlroYgqAV1PjStIhJXxYuTgUIfkEk7zTLjmIjLmU5q+fbD1NnOJA==
   /randombytes/2.1.0:
@@ -13615,6 +13614,18 @@ packages:
     dev: true
     resolution:
       integrity: sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==
+  /typewriter-effect/2.19.0_react-dom@17.0.1+react@17.0.1:
+    dependencies:
+      prop-types: 15.8.1
+      raf: 3.4.1
+      react: 17.0.1
+      react-dom: 17.0.1_react@17.0.1
+    dev: false
+    peerDependencies:
+      react: ^17.x || ^18.x
+      react-dom: ^17.x || ^18.x
+    resolution:
+      integrity: sha512-rhUX1ukmAXNFWUnMFx8CDU1uLWJQ7pRYzDU7WfHJRq43i6SmWSP9vFiUsOGfXINodUAgZiJ5xnzwLciHxZDGDg==
   /unbox-primitive/1.0.2:
     dependencies:
       call-bind: 1.0.2
@@ -14524,3 +14535,4 @@ specifiers:
   react-router-dom: 5.2.0
   react-scripts: 4.0.3
   styled-components: 5.3.6
+  typewriter-effect: 2.19.0

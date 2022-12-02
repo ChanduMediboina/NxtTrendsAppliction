@@ -1,3 +1,5 @@
+import Typewriter from 'typewriter-effect'
+
 import {Link} from 'react-router-dom'
 import Header from '../Header'
 
@@ -8,7 +10,20 @@ const Home = () => (
     <Header />
     <div className="home-container">
       <div className="home-content">
-        <h1 className="home-heading">Clothes That Get YOU Noticed</h1>
+        <h1 className="home-heading">
+          <Typewriter
+            options={{
+              strings: [
+                `Clothes That Get YOU Noticed`,
+                'Enjoy Shopping Like Never Before',
+                'Life is SHORT! Go shopping Today!',
+              ],
+              autoStart: true,
+              loop: true,
+            }}
+          />
+        </h1>
+
         <img
           src="https://assets.ccbp.in/frontend/react-js/nxt-trendz-home-img.png"
           alt="clothes that get you noticed"
