@@ -25,7 +25,7 @@ class SignInForm extends Component {
       },
       body: JSON.stringify(userDetails),
     }
-    const url = 'https://sekharslogin.herokuapp.com/register/'
+    const url = 'https://sekharslogin.onrender.com/register/'
     const response = await fetch(url, options)
     const data = await response.json()
     // console.log(data)
@@ -61,7 +61,7 @@ class SignInForm extends Component {
       location,
       password,
     } = this.state
-    console.log(username, gender, location, password)
+
     return (
       <div className="sign-in-container">
         <form onSubmit={this.onSubmitBtn} className="card-container">

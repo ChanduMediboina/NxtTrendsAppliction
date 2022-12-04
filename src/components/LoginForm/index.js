@@ -41,7 +41,8 @@ class LoginForm extends Component {
     event.preventDefault()
     const {username, password} = this.state
     const userDetails = {username, password}
-    const url = 'https://sekharslogin.herokuapp.com/login'
+    // const url = 'https://apis.ccbp.in/login'
+    const url = 'https://sekharslogin.onrender.com/login'
     const options = {
       method: 'POST',
       headers: {
@@ -49,13 +50,18 @@ class LoginForm extends Component {
       },
       body: JSON.stringify(userDetails),
     }
+    // const options = {
+    //   method: 'POST',
+    //   body: JSON.stringify(userDetails),
+    // }
     const response = await fetch(url, options)
     const data = await response.json()
-    // console.log(data)
+
     if (response.ok === true) {
       this.onSubmitSuccess()
     } else {
       this.onSubmitFailure(data.user_msg)
+      //   data.user_msg
     }
   }
 

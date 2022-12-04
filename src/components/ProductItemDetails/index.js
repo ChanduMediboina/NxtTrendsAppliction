@@ -123,7 +123,6 @@ class ProductItemDetails extends Component {
           price,
           rating,
           title,
-          id,
           totalReviews,
         } = productData
         const {addCartItem} = value
