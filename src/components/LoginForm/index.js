@@ -1,7 +1,8 @@
 import {Component} from 'react'
 import Cookies from 'js-cookie'
 import {Redirect, Link} from 'react-router-dom'
-
+import {FaUser} from 'react-icons/fa'
+import {RiLockPasswordLine} from 'react-icons/ri'
 import './index.css'
 
 class LoginForm extends Component {
@@ -56,7 +57,7 @@ class LoginForm extends Component {
     // }
     const response = await fetch(url, options)
     const data = await response.json()
-    console.log(data)
+
     if (response.ok === true) {
       this.onSubmitSuccess()
     } else {
@@ -69,19 +70,22 @@ class LoginForm extends Component {
     const {password, togglePassword} = this.state
 
     return (
-      <>
-        <label className="input-label" htmlFor="password">
-          PASSWORD
+      <div className="user-input-container">
+        <label htmlFor="password" className="login-label">
+          Password*
         </label>
-        <input
-          type={togglePassword ? 'text' : 'password'}
-          id="password"
-          className="password-input-field"
-          value={password}
-          onChange={this.onChangePassword}
-          placeholder="Password"
-        />
-      </>
+        <div className="input-icon-container">
+          <RiLockPasswordLine className="user-icon" />
+          <input
+            value={password}
+            onChange={this.onChangePassword}
+            type={togglePassword ? 'text' : 'password'}
+            id="password"
+            className="login-input"
+            placeholder="password"
+          />
+        </div>
+      </div>
     )
   }
 
@@ -89,19 +93,22 @@ class LoginForm extends Component {
     const {username} = this.state
 
     return (
-      <>
-        <label className="input-label" htmlFor="username">
-          USERNAME
+      <div className="user-input-container">
+        <label htmlFor="username" className="login-label">
+          Username*
         </label>
-        <input
-          type="text"
-          id="username"
-          className="username-input-field"
-          value={username}
-          onChange={this.onChangeUsername}
-          placeholder="Username"
-        />
-      </>
+        <div className="input-icon-container">
+          <FaUser className="user-icon" />
+          <input
+            type="text"
+            value={username}
+            onChange={this.onChangeUsername}
+            id="username"
+            className="login-input"
+            placeholder="username"
+          />
+        </div>
+      </div>
     )
   }
 
@@ -135,8 +142,8 @@ class LoginForm extends Component {
             className="login-website-logo-desktop-img"
             alt="website logo"
           />
-          <div className="input-container">{this.renderUsernameField()}</div>
-          <div className="input-container">{this.renderPasswordField()}</div>
+          {this.renderUsernameField()}
+          {this.renderPasswordField()}
           <div className="show-password-container">
             <input
               onChange={this.ontoggleShowPassword}
@@ -148,14 +155,14 @@ class LoginForm extends Component {
               Show Password
             </label>
           </div>
-          <button type="submit" className="login-button">
+          <button type="submit" className="login-btn">
             Login
           </button>
-          <Link to="sign-in">
+          {/* <Link to="sign-in">
             <button type="button" className="sign-btn">
               Sign in
             </button>
-          </Link>
+          </Link> */}
           {showSubmitError && <p className="error-message">*{errorMsg}</p>}
         </form>
       </div>

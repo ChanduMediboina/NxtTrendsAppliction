@@ -27,6 +27,18 @@
   font-weight: 500;
   line-height: 0.5;
 }
+.feed-back-container {
+  display: flex;
+  align-items: center;
+}
+.feed-back-heading {
+  font-family: 'Inter';
+  font-weight: 500;
+  font-size: 20px;
+  color: #000;
+  padding-right: 10px;
+}
+
 .shop-btn {
   border: none;
   background-color: blue;

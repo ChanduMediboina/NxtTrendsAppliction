@@ -10,6 +10,7 @@ dependencies:
   react-dom: 17.0.1_react@17.0.1
   react-icons: 4.2.0_react@17.0.1
   react-loader-spinner: 4.0.0_react-dom@17.0.1+react@17.0.1
+  react-rating-stars-component: 2.2.0
   react-router-dom: 5.2.0_react@17.0.1
   styled-components: 5.3.6_react-dom@17.0.1+react@17.0.1
   typewriter-effect: 2.19.0_react-dom@17.0.1+react@17.0.1
@@ -11736,6 +11737,10 @@ packages:
       react-dom: '*'
     resolution:
       integrity: sha512-RU2vpEej6G4ECei0h3q6bgLU10of9Lw5O+4AwF/mtkrX5oY20Sh/AxoPJ7etbrs/7Q3u4jN5qwCwGLRKCHpk6g==
+  /react-rating-stars-component/2.2.0:
+    dev: false
+    resolution:
+      integrity: sha512-A3lgLxumfFQQicKQmxacZ91fq/zRaVWlCPnVodJmJV6obvod4/yCotetN9WuyBiUfnKsEFDBo/8B85ocwmL7ng==
   /react-refresh/0.8.3:
     dev: true
     engines:
@@ -14532,6 +14537,7 @@ specifiers:
   react-dom: 17.0.1
   react-icons: 4.2.0
   react-loader-spinner: 4.0.0
+  react-rating-stars-component: 2.2.0
   react-router-dom: 5.2.0
   react-scripts: 4.0.3
   styled-components: 5.3.6
