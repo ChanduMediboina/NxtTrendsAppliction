@@ -18,6 +18,7 @@
   line-height: 30px;
   color: #0b69ff;
   text-align: end;
+  cursor: pointer;
 }
 @media screen and (min-width: 992px) {
   .login-form-container {

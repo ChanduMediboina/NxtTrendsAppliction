@@ -1,8 +1,17 @@
 import {Component} from 'react'
+
 import Cookies from 'js-cookie'
+
 import {Redirect, Link} from 'react-router-dom'
+
 import {FaUser} from 'react-icons/fa'
+
 import {RiLockPasswordLine} from 'react-icons/ri'
+
+import {signInWithEmailAndPassword} from 'firebase/auth'
+
+import auth from '../Firebase'
+
 import './index.css'
 
 class LoginForm extends Component {
@@ -42,28 +51,35 @@ class LoginForm extends Component {
     event.preventDefault()
     const {username, password} = this.state
     const userDetails = {username, password}
+    signInWithEmailAndPassword(auth, username, password)
+      .then(credential => {
+        this.onSubmitSuccess()
+      })
+      .catch(error => {
+        alert('Invalid Email or Password')
+      })
     // const url = 'https://apis.ccbp.in/login'
-    const url = 'https://sekharslogin.onrender.com/login'
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(userDetails),
-    }
+    // const url = 'https://sekharslogin.onrender.com/login'
+    // const options = {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(userDetails),
+    // }
     // const options = {
     //   method: 'POST',
     //   body: JSON.stringify(userDetails),
     // }
-    const response = await fetch(url, options)
-    const data = await response.json()
+    // const response = await fetch(url, options)
+    // const data = await response.json()
 
-    if (response.ok === true) {
-      this.onSubmitSuccess()
-    } else {
-      this.onSubmitFailure(data.user_msg)
-      //   data.user_msg
-    }
+    // if (response.ok === true) {
+    //   this.onSubmitSuccess()
+    // } else {
+    //   this.onSubmitFailure(data.user_msg)
+    //   //   data.user_msg
+    // }
   }
 
   renderPasswordField = () => {
@@ -105,7 +121,7 @@ class LoginForm extends Component {
             onChange={this.onChangeUsername}
             id="username"
             className="login-input"
-            placeholder="username"
+            placeholder="Email"
           />
         </div>
       </div>
@@ -158,11 +174,11 @@ class LoginForm extends Component {
           <button type="submit" className="login-btn">
             Login
           </button>
-          {/* <Link to="sign-in">
+          <Link to="sign-in">
             <button type="button" className="sign-btn">
-              Sign in
+              SignUp
             </button>
-          </Link> */}
+          </Link>
           {showSubmitError && <p className="error-message">*{errorMsg}</p>}
         </form>
       </div>

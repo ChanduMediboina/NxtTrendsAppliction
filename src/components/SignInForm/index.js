@@ -1,5 +1,11 @@
 import {Component} from 'react'
+
 import {Link} from 'react-router-dom'
+
+import {createUserWithEmailAndPassword} from 'firebase/auth'
+
+import auth from '../Firebase'
+
 import './index.css'
 
 class SignInForm extends Component {
@@ -18,22 +24,30 @@ class SignInForm extends Component {
     const {username, gender, location, password} = this.state
     const userDetails = {username, gender, location, password}
 
-    const options = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(userDetails),
-    }
-    const url = 'https://sekharslogin.onrender.com/register/'
-    const response = await fetch(url, options)
-    const data = await response.json()
-    // console.log(data)
-    if (response.ok === true) {
-      this.setState({successMsg: data.user_msg, errorMsg: ''})
-    } else {
-      this.setState({errorMsg: data.error_msg, successMsg: ''})
-    }
+    createUserWithEmailAndPassword(auth, username, password)
+      .then(() => {
+        alert('User Created Successfully')
+      })
+      .catch(() => {
+        alert('Invalid Email or Password')
+      })
+
+    // const options = {
+    //   method: 'POST',
+    //   headers: {
+    //     'Content-Type': 'application/json',
+    //   },
+    //   body: JSON.stringify(userDetails),
+    // }
+    // const url = 'https://sekharslogin.onrender.com/register/'
+    // const response = await fetch(url, options)
+    // const data = await response.json()
+    // // console.log(data)
+    // if (response.ok === true) {
+    //   this.setState({successMsg: data.user_msg, errorMsg: ''})
+    // } else {
+    //   this.setState({errorMsg: data.error_msg, successMsg: ''})
+    // }
   }
 
   getUsername = event => {
@@ -67,7 +81,7 @@ class SignInForm extends Component {
         <form onSubmit={this.onSubmitBtn} className="card-container">
           <label htmlFor="username">Username</label>
           <input
-            placeholder="Enter username"
+            placeholder="Email"
             onChange={this.getUsername}
             type="text"
             id="username"
